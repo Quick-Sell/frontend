@@ -1,16 +1,20 @@
 import React from 'react'
+import './Home.scss'
+import Main from '../../resources/home_main.jpg'
 
-import Header from '../Header'
+import Header from '../crossRouteComponents/Header'
 
 const Home = () => {
     
     return (
-        <>
+        <div class="HomeContainer">
         <Header/>
-      <div>
-          {/* auto slide images here */}
-          <h2>Real People. Real Products.</h2>
-          <button>Shop Now!</button>
+      <div class="topHomeContainer">
+          <img class="topImage" src={Main} alt="Real Airpods"/>
+          <div class="topHomeTextDiv">
+            <h2><span class="topHomeTextSecColor">REAL</span> People. <span class="topHomeTextSecColor">REAL</span> Products.</h2>
+            <button class="topHomeButton">EXPERIENCE <span class="topHomeTextSecColor">REAL</span> SHOPPING</button>
+          </div>
       </div>
       <div>
           <h2>How it Works</h2>
@@ -27,7 +31,7 @@ const Home = () => {
               <h3>Buy What You DO Want!</h3>
           </div>
       </div>
-      </>
+      </div>
     )
 }
 
