@@ -1,14 +1,18 @@
 import React from 'react'
 import './Home.scss'
 import Main from '../../resources/home_main.jpg'
+import Second from '../../resources/home_second.jpg'
 
 import Header from '../crossRouteComponents/Header'
+import Footer from '../crossRouteComponents/Footer'
 
 const Home = () => {
     
     return (
-        <div class="HomeContainer">
-        <Header/>
+      <>
+      <Header/>
+        <div class="homeContainer">
+       
       <div class="topHomeContainer">
           <img class="topImage" src={Main} alt="Real Airpods"/>
           <div class="topHomeTextDiv">
@@ -16,22 +20,22 @@ const Home = () => {
             <button class="topHomeButton">EXPERIENCE <span class="topHomeTextSecColor">REAL</span> SHOPPING</button>
           </div>
       </div>
-      <div>
-          <h2>How it Works</h2>
-          <div>
-              <img></img>
-              <h3>Sign Up</h3>
-          </div>
-          <div>
-              <img></img>
-              <h3>Sell Things You Don't Want</h3>
-          </div>
-          <div>
-              <img></img>
-              <h3>Buy What You DO Want!</h3>
+
+        <div class="fillerDiv">
+
+        </div>
+
+        <div class="middleHomeContainer">
+          <img class="middleImage" src={Second} alt="Real Airpods"/>
+          <div class="middleHomeTextDiv">
+            <h2>Sell what you don't need, <br/> so you can buy <br/> what you do.</h2>
+            <button class="middleHomeButton">EXPERIENCE <span class="middleHomeTextSecColor">REAL</span> SELLING</button>
           </div>
       </div>
+     
       </div>
+       <Footer />
+       </>
     )
 }
 

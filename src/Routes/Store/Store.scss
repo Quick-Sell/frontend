@@ -1,0 +1,78 @@
+@import '../../StyleVars/_constants';
+
+
+.storeContainer {
+    @include border-testing(red);
+    background-color: white;
+    .topStoreContainer {
+        // @include border-testing(green);
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-bottom: 0%;
+        h2 {
+            @include applyFont(none, 200);
+            text-align: center;
+        }
+    }
+    .storeCategoryContainer {
+        // @include border-testing(blue);
+        @include flex-center(row);
+        justify-content: space-around;
+        background-image: $whiteGradient;
+        margin-bottom: 5%;
+        box-shadow: 0px 10px 18px #888888;
+        h3 {
+            // @include border-testing(yellow);
+            @include applyFont(none, 400);
+            color: white;
+            font-size: .8rem;
+            background-color: $mainLightBlack;
+            border-radius: 30px;
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+    }
+    .middleStoreProducts {
+        @include flex-center(row);
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 10%;
+        .productCard {
+            @include flex-center(column);
+            align-items: center;
+            background-color: $whiteGradient;
+            border-radius: 30px;
+            padding: 1%;
+            width: 25%;
+            box-shadow: 0px 15px 18px #888888;
+            h3 {
+                @include applyFont(none, 300);
+            }
+            .productName {
+
+            }
+
+            img {
+                width: 80%;
+                border-radius: 30px;
+                box-shadow: 0px 10px 18px #888888;
+            }
+            .bottomCard {
+                @include flex-center(row);
+                align-items: center;
+                justify-content: space-around;
+                .productCategory {
+                    @include border-testing(red);
+                    font-size: .8rem;
+                    margin-left: 20%;
+                }
+                .productPrice {
+                    margin-right: 20%;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
