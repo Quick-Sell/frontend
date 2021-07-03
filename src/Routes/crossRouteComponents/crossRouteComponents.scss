@@ -7,34 +7,57 @@ header {
 }
 
 nav {
+    // @include border-testing(yellow);
    @include flex-center(row);
-   background-image: $whiteGradient;
+   background-image: linear-gradient(to bottom right, white, white, white, #c7c7c7, #888888);
+   padding: 0;
+   box-shadow: 0 5px 18px black;
+   width: 100%;
+   position: absolute;
+   z-index: 10;
    img {
+    //    @include border-testing(green);
        width: 7.5%;
        height: 7.5%;
        margin-left: 5%;
    }
    h1 {
+    //    @include border-testing(purple);
         font-family: 'Fira Sans', sans-serif;
         font-style: italic;
         font-weight: 700;
+
    }
     ul {
         // @include border-testing(green);
         @include flex-center(row);
-        margin: 0%, 0%, 0%, 0%;
-        height: 100%;
+        
         width: 75%;
         margin-left: 25%;
         li {
             // @include border-testing(blue);
-            margin-top: 1.5%;
-            margin-left: 20%;
+
+            margin-left: 18%;
             list-style: none;
+            // background-color: red;
+            margin-top: 0.5%;
+            padding-top: .75%;
+            padding-bottom: .75%;
+            padding-right: 3%;
+            padding-left: 3%;
+            border-radius: 0.12rem;
+            transition: all 0.2s;
             a {
                 @include applyFont(none, 300);
                 text-decoration: none;
                 color: black;
+            }
+        }
+        li:hover  {
+            background-color: $mainLightBlack;
+            box-shadow: 0 10px 18px $mainLightBlack;
+            a {
+                color:white;
             }
         }
     }

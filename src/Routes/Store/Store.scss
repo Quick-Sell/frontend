@@ -2,12 +2,12 @@
 
 
 .storeContainer {
-    @include border-testing(red);
+    // @include border-testing(red);
     background-color: white;
     .topStoreContainer {
         // @include border-testing(green);
-        padding-top: 5%;
-        padding-bottom: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
         margin-bottom: 0%;
         h2 {
             @include applyFont(none, 200);
@@ -36,6 +36,7 @@
     }
     .middleStoreProducts {
         @include flex-center(row);
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
         margin-bottom: 10%;
@@ -43,6 +44,7 @@
             @include flex-center(column);
             align-items: center;
             background-color: $whiteGradient;
+            margin-bottom: 5%;
             border-radius: 30px;
             padding: 1%;
             width: 25%;
@@ -56,6 +58,8 @@
 
             img {
                 width: 80%;
+                max-height: 40vh;
+                min-height: 40vh;
                 border-radius: 30px;
                 box-shadow: 0px 10px 18px #888888;
             }
@@ -64,7 +68,7 @@
                 align-items: center;
                 justify-content: space-around;
                 .productCategory {
-                    @include border-testing(red);
+                    // @include border-testing(red);
                     font-size: .8rem;
                     margin-left: 20%;
                 }

@@ -2,6 +2,7 @@
 
 .homeContainer {
     background-color: white;
+    z-index: -1;
 }
 
 .topHomeContainer {
@@ -9,7 +10,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 .topImage {
@@ -18,8 +18,10 @@
     height: 90vh;
     position: relative;
     z-index: 1;
+    margin-top: 5%;
     
 }
+
 
 .topHomeTextDiv {
     // @include border-testing(red);
@@ -31,15 +33,32 @@
     position: absolute;
     color: white;
     z-index: 2;
+    animation: fadeIn 2s;
     h2 {
         @include applyFont(none, 400);
         font-size: 5rem;
+        
         span {
             @include applyFont(italic, 500);
+            transition: all 0.2s;
             color: $mainRed;
+            animation: fadeIn 1s;
+        }
+        span:hover {
+            color: $mainDarkRed;
+            @include applyFont(bold, 700);
+     
         }
     }
 }
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    50% {opacity:0;}
+    75% {opacity:0.75;}
+    100% {opacity:1;}
+  }
+
 
 .topHomeButton {
     @include applyFont(none, 400);
@@ -55,6 +74,7 @@
     text-align:center;
     transition: all 0.2s;
     background-color: transparent;
+    animation: fadeIn all 2s 1s;
     span {
         @include applyFont(none, 700);
         font-size: 1.05rem;
@@ -101,6 +121,15 @@
     border-radius: 30px;
     margin-right: -10%;
     box-shadow: 0px 15px 18px #888888;
+    transition: all 0.2s;
+}
+.middleImage:hover {
+    width: 40.5%;
+    height: 60.25vh;
+    box-shadow: 
+    0px 20px 18px #888888,
+    1px 0px 18px #888888,
+    -1px 0px 18px #888888;
 }
 
 .middleHomeTextDiv {
@@ -115,7 +144,7 @@
         text-align: left;
         font-size: 2rem;
         line-height: 200%;
-        text-shadow: 0px 5px 10px #888888;
+        // text-shadow: 0px 5px 10px #888888;
         span {
             @include applyFont(italic, 500);
             color: $mainRed;
