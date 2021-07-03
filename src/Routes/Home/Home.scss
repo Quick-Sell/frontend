@@ -1,5 +1,26 @@
 @import '../../StyleVars/_constants';
 
+@keyframes fadeIn {
+    0% {opacity:0;}
+    50% {opacity:0;}
+    75% {opacity:0.75;}
+    100% {opacity:1;}
+  }
+
+  @keyframes fadeInPic {
+    0% {opacity:.9;}
+    100% {opacity:1;}
+  }
+
+  @keyframes fadeOutPic {
+    0% {opacity:1;}
+    100% {opacity:.9;}
+  }
+
+body {
+    margin: 0;
+}
+
 .homeContainer {
     background-color: white;
     z-index: -1;
@@ -19,7 +40,19 @@
     position: relative;
     z-index: 1;
     margin-top: 5%;
-    
+    // animation: fadeInPic .5s;   
+}
+
+#image1 {
+    animation: none;
+}
+
+#image2 {
+    animation: none; 
+}
+
+#image3 {
+    animation: none;
 }
 
 
@@ -37,9 +70,9 @@
     h2 {
         @include applyFont(none, 400);
         font-size: 5rem;
-        
         span {
             @include applyFont(italic, 500);
+            text-decoration: underline;
             transition: all 0.2s;
             color: $mainRed;
             animation: fadeIn 1s;
@@ -52,12 +85,7 @@
     }
 }
 
-@keyframes fadeIn {
-    0% {opacity:0;}
-    50% {opacity:0;}
-    75% {opacity:0.75;}
-    100% {opacity:1;}
-  }
+
 
 
 .topHomeButton {

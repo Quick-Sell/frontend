@@ -15,21 +15,47 @@ const Home = () => {
     const [mainImage, setMainImage] = useState(initalData)
 
     useEffect(() => {
+      let sheet = document.styleSheets[0]
       if (mainImage === Main) {
         setTimeout(() => {
+
+          
+          // sheet.insertRule("@keyframes {}")
           setMainImage(Main2)
+          document.getElementById("image2").style.animation = "fadeInPic 2s";
+          
+          setTimeout(() => {document.getElementById("image2").style.removeProperty("animation");}, 2500)
+          setTimeout(() => {document.getElementById("image2").style.animation = "fadeOutPic 2s";}, 4500)
+          // setTimeout(() => {document.getElementById("image2").style.removeProperty("animation");}, 6000)
+
+
+          // document.getElementById("image2").style[] = "opacity 0s 1s ease-in"
+          
+          // document.getElementById("image2").style.transition = "opacity 2s ease-in"
+          // document.getElementById("image2").style.opacity = "1"
+          // document.getElementById("image2").style.removeProperty("animation")
         }, 5000)
       } else if (mainImage === Main2) {
         setTimeout(() => {
           setMainImage(Main3)
+          document.getElementById("image3").style.animation = "fadeInPic 2s";
+          
+          
+          
+          setTimeout(() => {document.getElementById("image3").style.removeProperty("animation");}, 2500)
+          setTimeout(() => {document.getElementById("image3").style.animation = "fadeOutPic 2s";}, 4500)
         }, 5000)
       } else if (mainImage === Main3) {
         setTimeout(() => {
           setMainImage(Main)
+          document.getElementById("image1").style.animation = "fadeInPic 2s";
+          
+          setTimeout(() => {document.getElementById("image1").style.removeProperty("animation");}, 2500)
+          setTimeout(() => {document.getElementById("image1").style.animation = "fadeOutPic 2s";}, 4500)
         }, 5000)
       }
 
-    }, [mainImage])
+    })
     
     return (
       <>
@@ -37,9 +63,24 @@ const Home = () => {
         <div class="homeContainer">
        
       <div class="topHomeContainer">
-          <img class="topImage" src={mainImage} alt="Real Airpods"/>
+
+        {
+        mainImage === Main ? <img key={Date.now} class="topImage" id="image1" src={Main} alt="Real Airpods"/> 
+        : mainImage === Main2 ? <img key={Date.now} class="topImage" id="image2" src={Main2} alt="Real Computer"/>
+        : mainImage === Main3 ? <img key={Date.now} class="topImage" id="image3" src={Main3} alt="Real Fashion"/>
+        : console.log("error")
+      }
+
+
           <div class="topHomeTextDiv">
-            <h2><span class="topHomeTextSecColor">REAL</span> People. <span class="topHomeTextSecColor">REAL</span> Products.</h2>
+
+            {
+              mainImage === Main ? <h2><span class="topHomeTextSecColor">REAL</span> People. <span class="topHomeTextSecColor">REAL</span> Products.</h2>
+              : mainImage === Main2 ?  <h2><span class="topHomeTextSecColor">REAL</span> People. <span class="topHomeTextSecColor">REAL</span> Electronics.</h2>
+              : mainImage === Main3 ?  <h2><span class="topHomeTextSecColor">REAL</span> People. <span class="topHomeTextSecColor">REAL</span> Fashion.</h2>
+              : console.log("error")
+            }
+    
             <button class="topHomeButton">EXPERIENCE <span class="topHomeTextSecColor">REAL</span> SHOPPING</button>
           </div>
       </div>
