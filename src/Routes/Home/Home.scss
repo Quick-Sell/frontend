@@ -3,7 +3,7 @@
 @keyframes fadeIn {
     0% {opacity:0;}
     50% {opacity:0;}
-    75% {opacity:0.75;}
+    75% {opacity:0.8;}
     100% {opacity:1;}
   }
 
@@ -27,61 +27,65 @@ body {
 }
 
 .topHomeContainer {
-    // @include border-testing(green);
+    // @include border-testing(blue);
+    // background-image: linear-gradient(to right bottom, #fc3a3a, #fa5c5c, #F97979, #ff7474, #f37575);
+    background-image: linear-gradient(to bottom right, white, white, white, #c7c7c7);
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    width: 100%;
+    height: 90vh;
+    z-index: 1;
+    padding-top: 5%;
+
 }
 
 .topImage {
+    // @include border-testing(green);
     //@include border-testing(green);
-    width: 100%;
-    height: 90vh;
-    position: relative;
-    z-index: 1;
-    margin-top: 5%;
+    width: 40%;
+    padding: 0%;
+    animation: fadeIn 1s;
     // animation: fadeInPic .5s;   
-}
-
-#image1 {
-    animation: none;
-}
-
-#image2 {
-    animation: none; 
-}
-
-#image3 {
-    animation: none;
 }
 
 
 .topHomeTextDiv {
     // @include border-testing(red);
+
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
-    width: 100%;
-    position: absolute;
-    color: white;
+    margin-top: 0%;
+    padding-bottom: 5%;
+    width: 50%;
+    max-height: 60vh;
+    min-height: 60vh;
+    color: $mainLightBlack;
     z-index: 2;
-    animation: fadeIn 2s;
+ 
     h2 {
         @include applyFont(none, 400);
+        margin: 0% 0% 0% 0%;
         font-size: 5rem;
+        line-height: 150%;
+        animation: fadeIn 2s;
+        text-align: center;
         span {
-            @include applyFont(italic, 500);
+            @include applyFont(italic, 400);
             text-decoration: underline;
-            transition: all 0.2s;
-            color: $mainRed;
-            animation: fadeIn 1s;
+            text-decoration-color: $mainRed;
         }
-        span:hover {
-            color: $mainDarkRed;
-            @include applyFont(bold, 700);
-     
-        }
+    }
+    p {
+        // @include border-testing(red);
+        @include applyFont(none, 200);
+        text-align: center;
+        color: rgb(88, 88, 88);
+        margin-bottom: 5%;
+        animation: fadeIn 4s;
+        width: 70%;
     }
 }
 
@@ -89,29 +93,29 @@ body {
 
 
 .topHomeButton {
+    animation: fadeIn 5s;
     @include applyFont(none, 400);
     display:inline-block;
     padding:0.35em 1.2em;
-    border:0.1em solid #FFFFFF;
-    margin:0 0.3em 0.3em 0;
+    border:0.2em solid $mainRed;
+    // margin:0 0.3em 0.3em 0;
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
-    color:#FFFFFF;
+    color: $mainLightBlack;
     font-size: 1rem;
     text-align:center;
-    transition: all 0.2s;
+    transition: all 0.5s;
     background-color: transparent;
-    animation: fadeIn all 2s 1s;
-    span {
-        @include applyFont(none, 700);
-        font-size: 1.05rem;
-        color:red;
-    }
+
     }
     .topHomeButton:hover{
-    color:#000000;
-    background-color:#FFFFFF;
+
+        font-size: 1.1rem;
+    color: white;
+    background-color: $mainBlack;
+    border-color: $mainBlack;
+    box-shadow: 0 10px 18px $mainLightBlack;
     }
     
 
@@ -125,7 +129,7 @@ body {
     width: 99.9%;
     height: 10vh;
     color: $whiteGradient;
-    box-shadow: 0px 10px 18px #888888, 0px -10px 18px $mainDarkBlack;
+    box-shadow: 0px 10px 18px #888888, 0px -5px 18px #3b3b3b;
     margin-bottom: 10%;
     z-index: 10;
 }

@@ -9,9 +9,9 @@ header {
 nav {
     // @include border-testing(yellow);
    @include flex-center(row);
-   background-image: linear-gradient(to bottom right, white, white, white, #c7c7c7, #888888);
+   background-image: linear-gradient(to bottom right, white, white, white, #c7c7c7);
    padding: 0;
-   box-shadow: 0 5px 18px black;
+   box-shadow: 0 5px 18px #3b3b3b;
    width: 100%;
    position: absolute;
    z-index: 10;
@@ -46,7 +46,7 @@ nav {
             padding-right: 3%;
             padding-left: 3%;
             border-radius: 0.12rem;
-            transition: all 0.2s;
+            transition: all 0.3s;
             a {
                 @include applyFont(none, 300);
                 text-decoration: none;
